@@ -56,6 +56,16 @@ setup from contributors.
 
 Hints and places start from the files in [templates/](templates/README.md).
 
+## Publish to the platform
+
+Maintainers can publish `okf/` straight from this repository to the platform instance
+bound to it: run the **okf-publish** workflow (Actions, Run workflow, branch `main`).
+It stages the bundle, starts the platform's build and stops at "awaiting approval";
+an administrator reviews the quality report and approves in the platform admin. The
+workflow can only run from `main` and needs no stored credential (it uses GitHub's
+OIDC token). Settings and the trust model are in the header of
+[.github/workflows/okf-publish.yml](.github/workflows/okf-publish.yml).
+
 ## Build a GraphRAG service
 
 Configure your existing repository-based builder with:

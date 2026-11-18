@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "note": "Phase 213 / KPUB-03 canonical commit-marker bytes. The server defines them: compact JSON, keys in the order schema_version, files and per file path, sha256, size, entries sorted by path BYTES (UTF-8), no whitespace, no trailing newline. Phase 215's marker writer must reproduce `canonical` byte for byte for every case; `length` is its UTF-8 byte length and `sha256` the lowercase-hex sha256 of those bytes. Expected values are never edited to make one side pass; a disagreement is a bug in one implementation. Generated independently in Node and checked by the Rust implementation.",
+  "cases": [
+    {
+      "name": "ascii_paths_listed_out_of_order",
+      "input": {
+        "schema_version": 1,
+        "files": [
+          {
+            "path": "docs/B.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000002",
+            "size": 20
+          },
+          {
+            "path": "docs/a.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000001",
+            "size": 10
+          },
+          {
+            "path": "docs-x/c.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000003",
+            "size": 0
+          },
+          {
+            "path": "index.md",
+            "sha256": "00000000000000000000000000000000000000000000000000000000000000ff",
+            "size": 7
+          }
+        ]
+      },
+      "canonical": "{\"schema_version\":1,\"files\":[{\"path\":\"docs-x/c.md\",\"sha256\":\"0000000000000000000000000000000000000000000000000000000000000003\",\"size\":0},{\"path\":\"docs/B.md\",\"sha256\":\"0000000000000000000000000000000000000000000000000000000000000002\",\"size\":20},{\"path\":\"docs/a.md\",\"sha256\":\"0000000000000000000000000000000000000000000000000000000000000001\",\"size\":10},{\"path\":\"index.md\",\"sha256\":\"00000000000000000000000000000000000000000000000000000000000000ff\",\"size\":7}]}",
+      "length": 457,
+      "sha256": "f80ffb36251c016d1e5ab958f4f2f20dd080b6f7ed69c4289d7acb39f64bc39f"
+    },
+    {
+      "name": "non_ascii_path_is_emitted_raw_utf8",
+      "input": {
+        "schema_version": 1,
+        "files": [
+          {
+            "path": "notes/é-notes.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000004",
+            "size": 11
+          },
+          {
+            "path": "notes/plain.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000005",
+            "size": 12
+          }
+        ]
+      },
+      "canonical": "{\"schema_version\":1,\"files\":[{\"path\":\"notes/plain.md\",\"sha256\":\"0000000000000000000000000000000000000000000000000000000000000005\",\"size\":12},{\"path\":\"notes/é-notes.md\",\"sha256\":\"0000000000000000000000000000000000000000000000000000000000000004\",\"size\":11}]}",
+      "length": 257,
+      "sha256": "f0d6532d2fe4076df3215daad8f0aaf573926c40b9058b9d2e51ebd277c801b0"
+    },
+    {
+      "name": "a_quote_in_a_path_is_escaped",
+      "input": {
+        "schema_version": 1,
+        "files": [
+          {
+            "path": "docs/say \"hi\".md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000006",
+            "size": 13
+          }
+        ]
+      },
+      "canonical": "{\"schema_version\":1,\"files\":[{\"path\":\"docs/say \\\"hi\\\".md\",\"sha256\":\"0000000000000000000000000000000000000000000000000000000000000006\",\"size\":13}]}",
+      "length": 146,
+      "sha256": "0a16c8ae038028c46f808ef6fc89ffe3430d026e121495274e930551d58608be"
+    },
+    {
+      "name": "single_file",
+      "input": {
+        "schema_version": 1,
+        "files": [
+          {
+            "path": "index.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000007",
+            "size": 1
+          }
+        ]
+      },
+      "canonical": "{\"schema_version\":1,\"files\":[{\"path\":\"index.md\",\"sha256\":\"0000000000000000000000000000000000000000000000000000000000000007\",\"size\":1}]}",
+      "length": 135,
+      "sha256": "c1bcf20db2367299d0d9cd9f9872f998e58d9d825c933e26bcdeda29361166a9"
+    }
+  ]
+}
