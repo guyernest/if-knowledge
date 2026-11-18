@@ -1,0 +1,48 @@
+# Publish okf/ to the platform instance this repository is bound to (manual, main only).
+#
+# The job assumes the platform's publisher role with a GitHub OIDC token, then scripts/okf_publish.py
+# stages the bundle through the publisher entry and starts the platform's build. It stops at
+# "awaiting approval": approving and publishing stay in the platform's admin and are never done here.
+#
+# Settings it reads: secrets OKF_PUBLISHER_ROLE_ARN and OKF_PUBLISHER_AUDIENCE (secrets, not variables:
+# a public log echoes action inputs, and a secret is masked there), variables OKF_AWS_REGION,
+# OKF_PUBLISH_INSTANCE and OKF_BUNDLE_PATH (default okf).
+name: okf-publish
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: okf-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    # The binding names the ref `refs/heads/main`; any other ref is denied by the platform anyway.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Assume the publisher role
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ secrets.OKF_PUBLISHER_ROLE_ARN }}
+          aws-region: ${{ vars.OKF_AWS_REGION }}
+          audience: ${{ secrets.OKF_PUBLISHER_AUDIENCE }}
+          mask-aws-account-id: true
+
+      - name: Publish the bundle
+        env:
+          AUD: ${{ secrets.OKF_PUBLISHER_AUDIENCE }}
+          INSTANCE: ${{ vars.OKF_PUBLISH_INSTANCE }}
+          BUNDLE: ${{ vars.OKF_BUNDLE_PATH || 'okf' }}
+        run: python3 scripts/okf_publish.py --bundle "$BUNDLE" --instance "$INSTANCE"
