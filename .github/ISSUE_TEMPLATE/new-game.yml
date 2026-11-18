@@ -1,0 +1,23 @@
+name: Request a new game
+description: Ask for an empty bundle for a game that is not in the catalog yet.
+title: "New game: "
+labels: [new-game]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Game title
+    validations:
+      required: true
+  - type: input
+    id: sha256
+    attributes:
+      label: Story file SHA-256
+      description: The hash of the exact story file the content will cover (for example `shasum -a 256 game.z5`). Do not upload the story file.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Interpreter and version you tested with, and whether you plan to write the content yourself.

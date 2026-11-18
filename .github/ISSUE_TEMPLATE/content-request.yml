@@ -1,0 +1,26 @@
+name: Request or report content
+description: Ask for a hint, place or fix for an existing game, or report a wrong or spoiling hint.
+title: "Content: "
+labels: [content]
+body:
+  - type: input
+    id: game
+    attributes:
+      label: Game id
+      description: As listed in catalog.json.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is it
+      options: [Missing hint, Wrong hint, Hint gives away too much, Missing place or map note, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: Details
+      description: Which topic, and what happens in the story. Please avoid pasting copyrighted game text.
+    validations:
+      required: true

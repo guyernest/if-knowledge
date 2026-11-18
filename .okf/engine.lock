@@ -1,0 +1,7 @@
+# okf-check engine pin — copy to .okf/engine.lock; changes need a code-owner review
+version=0.1.0
+release_repo=guyernest/okf-check
+x86_64.archive_sha256=6a8af3672736f4ea063ec7c393955dce48ee97a9e13eb2f2c472961d21690c86
+x86_64.binary_sha256=77e1308d1c8db45d181212f850e58c71d0257048b2332b10438f2ab880c786a0
+aarch64.archive_sha256=a58761f17cc782df6b42ad5b0e6fda87789a1834fe5e32085c9d0c4957b38a3f
+aarch64.binary_sha256=2752ce311c191cb92923be24932e9671b8ecb635f13d5990b0e6eded3a09c01d
