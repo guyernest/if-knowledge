@@ -1,0 +1,22 @@
+Interactive Fiction Knowledge content license
+
+Copyright (c) 2026 Guy Ernest and IF Knowledge contributors.
+
+Except for the software files identified below and material carrying its own
+explicit notice, the original content, documentation, and catalog metadata in
+this repository are licensed under the Creative Commons Attribution 4.0
+International Public License (SPDX-License-Identifier: CC-BY-4.0).
+
+The license terms are available at:
+https://creativecommons.org/licenses/by/4.0/legalcode.en
+
+The material is provided as-is, without warranties, subject to that license.
+Suggested attribution: "IF Knowledge contributors", with a link to
+https://github.com/guyernest/if-knowledge and the source commit. Preserve any
+additional attribution notices and indicate modifications as required by the
+license.
+
+Software files in scripts/, tests/, .github/, requirements-dev.txt, and
+.gitignore are licensed under MIT; see LICENSE-CODE.
+
+Referenced games and third-party resources are not relicensed by this notice.

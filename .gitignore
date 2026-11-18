@@ -1,0 +1,14 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+normalized.json
+snapshots/
+dist/
+*.z[1-8]
+*.zblorb
+*.blorb
+*.ulx
+*.gblorb
+.env
+.env.*

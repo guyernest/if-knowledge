@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "games": {
+    "lost-pig": {
+      "title": "Lost Pig",
+      "story_sha256": "7bffe25e933aa22a2b1e9bfc8073bee5687d79a70394da19e50bfed5755368c4",
+      "bundle": "okf/lost-pig"
+    },
+    "zork1": {
+      "title": "Zork I",
+      "story_sha256": "0ae5ac229e79094ff368b6669356444af0f35e21d862a1baaa546989085c15fd",
+      "bundle": "okf/zork1"
+    }
+  }
+}
