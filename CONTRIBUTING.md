@@ -4,6 +4,16 @@ Use a pull request to add or correct content. Include the game, story hash,
 affected topic, intended spoiler level, sources, and how you checked the facts.
 Human review is required before calling a draft verified.
 
+## Quick start
+
+- **A new game:** `python3 scripts/new_game.py <game-id> --title "<Title>" --story-sha256 <hash>`
+  creates the catalog entry and an empty bundle (steps 1-2 under "Add a game" below).
+- **A hint or place:** copy a file from [templates/](templates/README.md), rename it with
+  the game ID prefix, fill in the placeholders and link it from an index.
+- **Check it:** run the validation commands in the [README](README.md#validate). The pull
+  request template lists what a reviewer needs, and the `okf-check` job comments on
+  the pull request with the platform engine's findings.
+
 ## Author a document
 
 Keep each hint tier in a separate Markdown file so a gentle hint can be returned

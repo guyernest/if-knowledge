@@ -42,6 +42,20 @@ pushes. Real ingestion is an additional local/platform check requiring that bina
 Interpreter and story-binary checks remain in the
 [MCP app repository](https://github.com/guyernest/MCP-IF).
 
+Pull requests are also checked by the platform's own engine, `okf-check`, which
+posts a preview comment with the findings (the workflow is `okf-check`; its
+maintainer setup is in [.github/okf/CI.md](.github/okf/CI.md)). It needs no
+setup from contributors.
+
+## Add a game or a hint
+
+```sh
+# a new game: creates the catalog entry and an empty okf/<id>/ bundle
+.venv/bin/python scripts/new_game.py zork2 --title "Zork II" --story-sha256 <sha256 of the story file>
+```
+
+Hints and places start from the files in [templates/](templates/README.md).
+
 ## Build a GraphRAG service
 
 Configure your existing repository-based builder with:
