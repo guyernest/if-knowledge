@@ -1,5 +1,5 @@
 schema_version = 1
 instance = "graphrag-if-knowledge"
 minimum_engine = "0.2.0"
-region = "us-east-1"
+region = "us-west-2"
 bundle_root = "okf"
