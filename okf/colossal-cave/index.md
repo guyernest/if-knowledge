@@ -11,3 +11,5 @@ serial 261108. See the [release page](https://microheaven.com/advent/) and use t
 exact story file hash listed in the catalog when verifying contributions.
 
 The original game is by Will Crowther and Don Woods.
+
+* [Colossal Cave Adventure At End Of Road hint 1](colossal-cave-at-end-of-road-hint-1.md) - A gentle nudge for the opening room of the game.
