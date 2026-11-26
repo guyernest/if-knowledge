@@ -58,6 +58,8 @@ class NewGameTests(unittest.TestCase):
         self.assertFalse((self.root / 'okf/other-game').exists())
 
     def test_bad_inputs_are_refused(self):
+        corpus = self.root / "okf"
+        before = sorted(entry.name for entry in corpus.iterdir())
         for game_id, title, sha in [
             ('Bad_Id', 'T', SHA), ('-lead', 'T', SHA), ('two--hyphens', 'T', SHA), ('../escape', 'T', SHA),
             ('ok-id', '', SHA), ('ok-id', 'T', 'abc'), ('ok-id', 'T', 'B' * 64),
@@ -65,7 +67,7 @@ class NewGameTests(unittest.TestCase):
             with self.subTest(game_id=game_id, title=title, sha=sha[:3]):
                 with self.assertRaises(scaffolder.ScaffoldError):
                     scaffolder.scaffold(self.root, game_id, title, sha)
-        self.assertEqual(sorted(p.name for p in (self.root / 'okf').iterdir()), ['index.md', 'lost-pig', 'zork1'])
+        self.assertEqual(sorted(entry.name for entry in corpus.iterdir()), before)
 
     def test_main_reports_failure_with_exit_code(self):
         quiet = io.StringIO()

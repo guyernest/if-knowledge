@@ -9,5 +9,6 @@ tags: [interactive-fiction, navigation]
 This collection contains spoilers. Applications must enforce the player's chosen
 hint level and game version before returning any content.
 
+* [Colossal Cave Adventure](colossal-cave/index.md)
 * [Lost Pig](lost-pig/index.md)
 * [Zork I](zork1/index.md)

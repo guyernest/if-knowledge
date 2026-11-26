@@ -1,6 +1,11 @@
 {
   "version": 1,
   "games": {
+    "colossal-cave": {
+      "title": "Colossal Cave Adventure",
+      "story_sha256": "e198600816ad598e129c2af13f2b72d8a7773ad7ae3ab3fe887ecd2ba4631b8e",
+      "bundle": "okf/colossal-cave"
+    },
     "lost-pig": {
       "title": "Lost Pig",
       "story_sha256": "7bffe25e933aa22a2b1e9bfc8073bee5687d79a70394da19e50bfed5755368c4",
