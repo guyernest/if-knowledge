@@ -9,3 +9,5 @@
 # branch (see the CI runbook). Until both are done this file protects nothing.
 /.github/ @guyernest
 /.okf/ @guyernest
+/.claude/ @guyernest
+/scripts/ @guyernest
