@@ -1,7 +1,7 @@
-# okf-check engine pin — copy to .okf/engine.lock; changes need a code-owner review
-version=0.2.0
+# okf-check engine pin (shipped with template okf-kb-template-v0.1.4) — copy to .okf/engine.lock; changes need a code-owner review
+version=0.3.0
 release_repo=guyernest/okf-check
-x86_64.archive_sha256=66ed53e33e2d3c4b5a9a6274d5433b647ba5e553b45222154084c40d01014ce2
-x86_64.binary_sha256=0039559f11bcea51e6e7b96335c788ebf890db1a126bac71fba18f3f4ae77b3e
-aarch64.archive_sha256=76f256e12e1f355d9c0d0e7a282d702dcbfc10f6252c8283c75c68f28a1ef66d
-aarch64.binary_sha256=115173c4b8c69d56cb37e62f33c1edfed0ef8fe0857e8ceda9812beb410cdade
+x86_64.archive_sha256=4055affee417ee582a179e564781aab73dca0ca9ec72d7e6957e7991363fa6ca
+x86_64.binary_sha256=e947cfa2d9dae72a550de8d45d1ce4dd7ed7d8c35993b5909a8a974be0a1b272
+aarch64.archive_sha256=4dae1a522950908c034e66176b7f57f32c25868f7bcdb0ad7cd6e61618e47342
+aarch64.binary_sha256=5433df537823fbc4b2515806a8c53270d391c2ce1b6fe750f402a5dbbe1d15bc
