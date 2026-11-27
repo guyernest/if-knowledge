@@ -1,10 +1,14 @@
 ---
 type: Index
 title: Zork I knowledge
-description: Empty starter bundle awaiting community contributions.
-tags: [game-zork1, bootstrap]
+description: Three separate opening hints for release 119, serial 880429.
+tags: [game-zork1, navigation]
 ---
+
 # Zork I knowledge
 
-This bundle intentionally has no hints, walkthrough, or map yet. Contributors
-can add reviewed, independently authored material for the story version in the catalog.
+Opening hints apply at West of House in the exact story edition listed in the catalog.
+
+* [Gentle opening hint](zork1-west-of-house-hint-1.md) - Gentle help for the opening at West of House.
+* [Guided opening hint](zork1-west-of-house-hint-2.md) - Guided help for the opening at West of House.
+* [Direct opening hint](zork1-west-of-house-hint-3.md) - Direct help for the opening at West of House.

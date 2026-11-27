@@ -33,13 +33,13 @@ class NewGameTests(unittest.TestCase):
 
     def test_scaffolded_game_passes_the_validator(self):
         before = validator.validate(self.root)
-        scaffolder.scaffold(self.root, 'zork2', 'Zork II', SHA)
+        scaffolder.scaffold(self.root, 'example-game', 'Example Game', SHA)
         games, concepts = validator.validate(self.root)
         self.assertEqual((games, concepts), (before[0] + 1, before[1]))
         catalog = json.loads((self.root / 'catalog.json').read_text())
-        self.assertEqual(catalog['games']['zork2'], {'title': 'Zork II', 'story_sha256': SHA, 'bundle': 'okf/zork2'})
+        self.assertEqual(catalog['games']['example-game'], {'title': 'Example Game', 'story_sha256': SHA, 'bundle': 'okf/example-game'})
         self.assertEqual(list(catalog['games']), sorted(catalog['games']))
-        self.assertIn('* [Zork II](zork2/index.md)', (self.root / 'okf/index.md').read_text())
+        self.assertIn('* [Example Game](example-game/index.md)', (self.root / 'okf/index.md').read_text())
 
     def test_titles_with_yaml_punctuation_still_validate(self):
         scaffolder.scaffold(self.root, 'colon-game', 'Colon: The Game', SHA)
@@ -73,7 +73,7 @@ class NewGameTests(unittest.TestCase):
         quiet = io.StringIO()
         with contextlib.redirect_stdout(quiet), contextlib.redirect_stderr(quiet):
             self.assertEqual(scaffolder.main(['zork1', '--title', 'Zork I', '--story-sha256', SHA, '--root', str(self.root)]), 1)
-            self.assertEqual(scaffolder.main(['zork2', '--title', 'Zork II', '--story-sha256', SHA, '--root', str(self.root)]), 0)
+            self.assertEqual(scaffolder.main(['example-game', '--title', 'Example Game', '--story-sha256', SHA, '--root', str(self.root)]), 0)
 
 
 if __name__ == '__main__':

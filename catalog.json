@@ -11,10 +11,25 @@
       "story_sha256": "7bffe25e933aa22a2b1e9bfc8073bee5687d79a70394da19e50bfed5755368c4",
       "bundle": "okf/lost-pig"
     },
+    "willow-station": {
+      "title": "The Lantern at Willow Station",
+      "story_sha256": "7a1ef29384dde344d740b8645d2e9e97a3841c2cabe73f49ba7e1dffe17f6b66",
+      "bundle": "okf/willow-station"
+    },
     "zork1": {
       "title": "Zork I",
-      "story_sha256": "0ae5ac229e79094ff368b6669356444af0f35e21d862a1baaa546989085c15fd",
+      "story_sha256": "37084966477dff679282de42974b2077156b1bd68fad92a65d4ea94d8eb64d79",
       "bundle": "okf/zork1"
+    },
+    "zork2": {
+      "title": "Zork II",
+      "story_sha256": "3ae7d5558943e9721f3e4b273c8a7faec1a03a604e1ae4ee1cde472c21cb24ac",
+      "bundle": "okf/zork2"
+    },
+    "zork3": {
+      "title": "Zork III",
+      "story_sha256": "b637a242865d059890184164ce8dec28554cc80901dcbf26c740b2d1ed0d4eb8",
+      "bundle": "okf/zork3"
     }
   }
 }
