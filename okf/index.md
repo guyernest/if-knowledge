@@ -11,4 +11,7 @@ hint level and game version before returning any content.
 
 * [Colossal Cave Adventure](colossal-cave/index.md)
 * [Lost Pig](lost-pig/index.md)
+* [The Lantern at Willow Station](willow-station/index.md)
 * [Zork I](zork1/index.md)
+* [Zork II](zork2/index.md)
+* [Zork III](zork3/index.md)
